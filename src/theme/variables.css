@@ -2,8 +2,24 @@
 http://ionicframework.com/docs/theming/ */
 
 /** Ionic CSS Variables **/
+* {
+  box-sizing: border-box;
+}
 
+#page-wrap {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
 
+.background {
+  background-color:#E2E2E2;
+}
+
+.dashboard {
+  background-color: #ffffff;
+  border-radius: 15px;
+  height:   500px;
+}
 :root {
   --ion-background-color: #E2E2E2
   /** primary **/

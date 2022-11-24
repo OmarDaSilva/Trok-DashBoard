@@ -7,8 +7,8 @@ export interface Invoice {
   };
   recipientCompanyAddress: string;
   vat: number;
-  subTotal: string;
-  totalInclVat: string;
-  InvoiceFrom: string;
+  subTotal: number;
+  totalInclVat: number;
+  invoiceFrom: string;
   dueDate: string;
 }

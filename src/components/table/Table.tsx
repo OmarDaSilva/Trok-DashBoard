@@ -1,6 +1,7 @@
-import { IonCol, IonGrid, IonItem, IonList, IonRow } from "@ionic/react";
+import { IonCol, IonGrid, IonItem, IonLabel, IonList, IonListHeader, IonRow } from "@ionic/react";
 import React from "react";
 import { Invoice } from "../../types/invoiceTypes";
+import TableItem from "./table-item/tableItem";
 import "./Table.css";
 
 const Table: React.FC<{ invoices: Invoice[] | null }> = (payload) => {
@@ -10,48 +11,30 @@ const Table: React.FC<{ invoices: Invoice[] | null }> = (payload) => {
         <IonItem>
           <IonGrid>
             <IonRow>
-              <IonCol>Supplier Details</IonCol>
-              <IonCol>Created Date</IonCol>
-              <IonCol>Amount</IonCol>
-              <IonCol>Due date</IonCol>
+              <IonCol class="table-columns-labels">Supplier Details</IonCol>
+              <IonCol class="table-columns-labels">Created Date</IonCol>
+              <IonCol class="table-columns-labels">Amount</IonCol>
+              <IonCol class="table-columns-labels">Due date</IonCol>
             </IonRow>
           </IonGrid>
         </IonItem>
       </IonList>
 
-      <IonList lines="none" class="table">
-        <IonItem>
+      <IonList class="table">
+        <IonListHeader class="table-header">
           <IonGrid>
             <IonRow>
-              <IonCol>September</IonCol>
+              <IonCol><IonLabel>September</IonLabel></IonCol>
               <IonCol></IonCol>
               <IonCol></IonCol>
               <IonCol>2023</IonCol>
             </IonRow>
           </IonGrid>
-        </IonItem>
+        </IonListHeader>
 
-        <IonItem>
-          <IonGrid>
-            <IonRow>
-              <IonCol>BP</IonCol>
-              <IonCol>September 1st 2023</IonCol>
-              <IonCol>£456.70</IonCol>
-              <IonCol>01/10/11</IonCol>
-            </IonRow>
-          </IonGrid>
-        </IonItem>
-
-        <IonItem>
-          <IonGrid>
-            <IonRow>
-              <IonCol>Esso</IonCol>
-              <IonCol>September 2nd 2023</IonCol>
-              <IonCol>£300.02</IonCol>
-              <IonCol>01/10/11</IonCol>
-            </IonRow>
-          </IonGrid>
-        </IonItem>
+        {payload.invoices?.map(invoice => {
+          return <TableItem invoice={invoice} key={invoice._id} />;
+        })}
       </IonList>
     </>
   );

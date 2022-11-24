@@ -1,4 +1,13 @@
-.card {
-    width: 95%;
-    border-radius: 25px;
+.card-header {
+    padding-bottom: 0;
+}
+
+.title {
+    font-size: 32px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.margin-bottom {
+  margin-bottom: 10px;
 }

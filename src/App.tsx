@@ -37,7 +37,7 @@ import Home from '../src/pages/home';
 setupIonicReact();
 
 const App: React.FC = () => (
-  <IonApp>  
+  <IonApp class="background">  
     <IonReactRouter>
       <IonRouterOutlet>
         <Route exact path=''>

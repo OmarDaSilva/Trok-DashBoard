@@ -1,3 +1,14 @@
 .table {
     width: 100%;
 }
+
+.table-header {
+    background-color: #F3F3F3;
+    border-width: 0;
+}
+
+.table-columns-labels {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #696969;
+}

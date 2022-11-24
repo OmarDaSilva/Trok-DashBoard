@@ -1,39 +1,46 @@
 import { IonGrid, IonRow, IonCol, IonIcon, IonLabel, IonList, IonItem } from "@ionic/react";
 import { personCircleOutline, chevronDownOutline } from "ionicons/icons";
 import React from "react";
+import './SideBar.css'
 
 const SideBar: React.FC = () => {
   return (
     <IonGrid style={{ width: "100%" }}>
       <IonRow>
-        <IonGrid>
+        <IonGrid class="grid">
           <IonCol>
-            <IonIcon icon={personCircleOutline} size="large"></IonIcon>
-          </IonCol>
-          <IonCol class="custom-column-profile">
-            <IonLabel>John Doe</IonLabel>
-            <IonIcon icon={chevronDownOutline} size="medium" />
+            <IonGrid>
+              <IonCol>
+                <IonIcon icon={personCircleOutline} class="icon-profile"></IonIcon>
+              </IonCol>
+              <IonCol>
+                <IonLabel class="label">John Doe</IonLabel>
+              </IonCol>
+              <IonCol>
+                <IonIcon icon={chevronDownOutline} class="icon-dropdown" />
+              </IonCol>
+            </IonGrid>
           </IonCol>
         </IonGrid>
       </IonRow>
       <IonList lines="none">
         <IonItem>
-          <IonLabel>Home</IonLabel>
+          <IonLabel class="label">Home</IonLabel>
         </IonItem>
         <IonItem>
-          <IonLabel>Cards</IonLabel>
+          <IonLabel class="label">Cards</IonLabel>
         </IonItem>
         <IonItem>
-          <IonLabel>Invoices</IonLabel>
+          <IonLabel class="label">Invoices</IonLabel>
         </IonItem>
         <IonItem>
-          <IonLabel>Accounting</IonLabel>
+          <IonLabel class="label">Accounting</IonLabel>
         </IonItem>
         <IonItem>
-          <IonLabel>Settings</IonLabel>
+          <IonLabel class="label" >Settings</IonLabel>
         </IonItem>
         <IonItem>
-          <IonLabel>Help</IonLabel>
+          <IonLabel class="label">Help</IonLabel>
         </IonItem>
       </IonList>
     </IonGrid>

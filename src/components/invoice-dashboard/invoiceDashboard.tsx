@@ -2,6 +2,7 @@ import {
   IonCard,
   IonCardContent,
   IonCardHeader,
+  IonCardSubtitle,
   IonCardTitle,
 } from "@ionic/react";
 import Table from "../table/Table";
@@ -30,13 +31,13 @@ const InvoiceDashboard: React.FC = () => {
 
   
   return (
-    <IonCard>
-      <IonCardHeader>
+    <IonCard class="dashboard">
+      <IonCardHeader class="card-header">
         <IonCardTitle class="title">Invoices</IonCardTitle>
       </IonCardHeader>
 
     { }
-      <IonCardContent>
+      <IonCardContent class="margin-bottom">
         <Table invoices={invoices}/>
       </IonCardContent>
     </IonCard>

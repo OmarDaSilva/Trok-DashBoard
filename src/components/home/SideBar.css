@@ -1,0 +1,18 @@
+.label {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+} 
+
+.grid {
+    margin-bottom: 20px;
+}
+
+.icon-profile {
+    font-size: 50px;
+    margin-right: 5px;
+}
+
+.icon-dropdown {
+    font-size: 30px;
+}

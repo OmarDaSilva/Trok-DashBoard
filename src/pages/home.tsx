@@ -39,7 +39,7 @@ const Home: React.FC = () => {
               <SideBar />
             </IonCol>
             <IonCol>
-              <InvoiceDashboard />
+              <InvoiceDashboard/>
             </IonCol>
           </IonRow>
         </IonGrid>
