@@ -1,7 +1,8 @@
-.label {
+.username-label {
     font-family: 'Roboto', sans-serif;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 18px;
+    margin-top: 20px;
 } 
 
 .grid {
@@ -15,4 +16,12 @@
 
 .icon-dropdown {
     font-size: 30px;
+}
+
+.username {
+    margin-top: 32px;
+}
+
+.username-swap-icon {
+    margin-top: 10px;
 }

@@ -1,7 +1,15 @@
-import { IonGrid, IonRow, IonCol, IonIcon, IonLabel, IonList, IonItem } from "@ionic/react";
+import {
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonIcon,
+  IonLabel,
+  IonList,
+  IonItem,
+} from "@ionic/react";
 import { personCircleOutline, chevronDownOutline } from "ionicons/icons";
 import React from "react";
-import './SideBar.css'
+import "./SideBar.css";
 
 const SideBar: React.FC = () => {
   return (
@@ -11,17 +19,20 @@ const SideBar: React.FC = () => {
           <IonCol>
             <IonGrid>
               <IonCol>
-                <IonIcon icon={personCircleOutline} class="icon-profile"></IonIcon>
-              </IonCol>
-              <IonCol>
-                <IonLabel class="label">John Doe</IonLabel>
-              </IonCol>
-              <IonCol>
-                <IonIcon icon={chevronDownOutline} class="icon-dropdown" />
+                <IonIcon
+                  icon={personCircleOutline}
+                  class="icon-profile"
+                ></IonIcon>
               </IonCol>
             </IonGrid>
           </IonCol>
         </IonGrid>
+        <IonCol class="username">
+          <IonLabel class="username-label">John Doe</IonLabel>
+        </IonCol>
+        <IonCol class="username-swap-icon">
+          <IonIcon icon={chevronDownOutline} class="icon-dropdown username" />
+        </IonCol>
       </IonRow>
       <IonList lines="none">
         <IonItem>
@@ -37,7 +48,7 @@ const SideBar: React.FC = () => {
           <IonLabel class="label">Accounting</IonLabel>
         </IonItem>
         <IonItem>
-          <IonLabel class="label" >Settings</IonLabel>
+          <IonLabel class="label">Settings</IonLabel>
         </IonItem>
         <IonItem>
           <IonLabel class="label">Help</IonLabel>

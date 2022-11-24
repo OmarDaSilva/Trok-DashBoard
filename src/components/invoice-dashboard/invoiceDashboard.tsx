@@ -10,7 +10,8 @@ import "./invoiceDashboard.css";
 import { Invoice } from "../../types/invoiceTypes";
 
 const InvoiceDashboard: React.FC = () => {
-  const [invoices, setInvoice] = useState<Invoice[] | null>(null);
+  const [invoices, setInvoice] = useState<Invoice[]>([]);
+  const [loaded, setloaded] = useState(false);
 
   useEffect(() => {
     const url = "http://localhost:5001/getInvoices";
@@ -20,6 +21,7 @@ const InvoiceDashboard: React.FC = () => {
         const response = await fetch(url);
         const json = await response.json();
         setInvoice(json);
+        setloaded(true);
       } catch (error) {
         console.log("error", error);
       }
@@ -35,9 +37,8 @@ const InvoiceDashboard: React.FC = () => {
         <IonCardTitle class="title">Invoices</IonCardTitle>
       </IonCardHeader>
 
-    { }
       <IonCardContent class="margin-bottom">
-        <Table invoices={invoices}/>
+        <Table invoices={invoices} loaded={loaded}/>
       </IonCardContent>
     </IonCard>
   );
