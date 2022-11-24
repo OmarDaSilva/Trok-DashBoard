@@ -1,0 +1,45 @@
+import {
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonCardTitle,
+} from "@ionic/react";
+import Table from "../table/Table";
+import React, { useEffect, useState } from "react";
+import "./invoiceDashboard.css";
+import { Invoice } from "../../types/invoiceTypes";
+
+const InvoiceDashboard: React.FC = () => {
+  const [invoices, setInvoice] = useState<Invoice[] | null>(null);
+
+  useEffect(() => {
+    const url = "http://localhost:5001/getInvoices";
+
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url);
+        const json = await response.json();
+        setInvoice(json);
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  
+  return (
+    <IonCard>
+      <IonCardHeader>
+        <IonCardTitle class="title">Invoices</IonCardTitle>
+      </IonCardHeader>
+
+    { }
+      <IonCardContent>
+        <Table invoices={invoices}/>
+      </IonCardContent>
+    </IonCard>
+  );
+};
+export default InvoiceDashboard;

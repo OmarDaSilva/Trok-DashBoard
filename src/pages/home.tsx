@@ -21,7 +21,8 @@ import { personCircleOutline, chevronDownOutline } from "ionicons/icons";
 
 import "./home.css";
 import SideBar from "../components/home/SideBar";
-import Dashboard from "../components/dashboard/Dashboard";
+// import Dashboard from "../components/dashboard/Dashboard";
+import InvoiceDashboard from "../components/invoice-dashboard/invoiceDashboard";
 
 const Home: React.FC = () => {
   return (
@@ -38,7 +39,7 @@ const Home: React.FC = () => {
               <SideBar />
             </IonCol>
             <IonCol>
-              <Dashboard />
+              <InvoiceDashboard />
             </IonCol>
           </IonRow>
         </IonGrid>

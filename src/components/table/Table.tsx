@@ -1,8 +1,9 @@
 import { IonCol, IonGrid, IonItem, IonList, IonRow } from "@ionic/react";
 import React from "react";
+import { Invoice } from "../../types/invoiceTypes";
 import "./Table.css";
 
-const Table: React.FC = () => {
+const Table: React.FC<{ invoices: Invoice[] | null }> = (payload) => {
   return (
     <>
       <IonList lines="none" class="table">
@@ -19,39 +20,39 @@ const Table: React.FC = () => {
       </IonList>
 
       <IonList lines="none" class="table">
-      <IonItem>
-        <IonGrid>
-          <IonRow>
-            <IonCol>September</IonCol>
-            <IonCol></IonCol>
-            <IonCol></IonCol>
-            <IonCol>2023</IonCol>
-          </IonRow>
-        </IonGrid>
-      </IonItem>
+        <IonItem>
+          <IonGrid>
+            <IonRow>
+              <IonCol>September</IonCol>
+              <IonCol></IonCol>
+              <IonCol></IonCol>
+              <IonCol>2023</IonCol>
+            </IonRow>
+          </IonGrid>
+        </IonItem>
 
-      <IonItem>
-        <IonGrid>
-          <IonRow>
-            <IonCol>BP</IonCol>
-            <IonCol>September 1st 2023</IonCol>
-            <IonCol>£456.70</IonCol>
-            <IonCol>01/10/11</IonCol>
-          </IonRow>
-        </IonGrid>
-      </IonItem>
+        <IonItem>
+          <IonGrid>
+            <IonRow>
+              <IonCol>BP</IonCol>
+              <IonCol>September 1st 2023</IonCol>
+              <IonCol>£456.70</IonCol>
+              <IonCol>01/10/11</IonCol>
+            </IonRow>
+          </IonGrid>
+        </IonItem>
 
-      <IonItem>
-        <IonGrid>
-          <IonRow>
-            <IonCol>Esso</IonCol>
-            <IonCol>September 2nd 2023</IonCol>
-            <IonCol>£300.02</IonCol>
-            <IonCol>01/10/11</IonCol>
-          </IonRow>
-        </IonGrid>
-      </IonItem>
-    </IonList>
+        <IonItem>
+          <IonGrid>
+            <IonRow>
+              <IonCol>Esso</IonCol>
+              <IonCol>September 2nd 2023</IonCol>
+              <IonCol>£300.02</IonCol>
+              <IonCol>01/10/11</IonCol>
+            </IonRow>
+          </IonGrid>
+        </IonItem>
+      </IonList>
     </>
   );
 };
