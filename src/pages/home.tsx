@@ -6,16 +6,12 @@ import {
   IonGrid,
   IonRow,
   IonCol,
-  IonCard,
 } from "@ionic/react";
-
 import "./home.css";
 import SideBar from "../components/home/SideBar";
-// import Dashboard from "../components/dashboard/Dashboard";
 import InvoiceDashboard from "../components/invoice-dashboard/invoiceDashboard";
 import emitter from "../eventemitter";
 import { Invoice } from "../types/invoiceTypes";
-import Detail from "../components/detail/detail";
 import DetailPanel from "../components/detail/DetailPanel";
 
 const Home: React.FC = () => {
@@ -26,15 +22,20 @@ const Home: React.FC = () => {
     const listener = emitter.addListener("invoiceClicked", (data: Invoice) => {
       setInvoice(data);
       toggleInvoiceDetail(true);
-      alert(invoice);
     });
 
-    return () => listener.remove();
-  }, []);
+    const listenerDetailPanel = emitter.addListener(
+      "closeDetails",
+      (data: Invoice) => {
+        toggleInvoiceDetail(false);
+      }
+    );
 
-  // const closeSidePanel = () => {
-  //   ReactDOM.findDOMNode(component)
-  // }
+    return () => {
+      listener.remove();
+      listenerDetailPanel.remove();
+    };
+  }, []);
 
   return (
     <div className="container">
@@ -52,30 +53,15 @@ const Home: React.FC = () => {
               </IonCol>
               <IonCol>
                 <InvoiceDashboard />
-                <button onClick={() => toggleInvoiceDetail(!openInvoiceDetail)}>
-                  Click
-                </button>
               </IonCol>
             </IonRow>
           </IonGrid>
         </IonRow>
       </IonGrid>
-      {/* {openInvoiceDetail ? (
-        <IonGrid class="overlap">
-          Hello
-        < /IonGr
-        id>
-      ) : null} */}
-      {/* {
-        invoice ? (
-          <DetailPanel invoice={invoice} toggle={openInvoiceDetail}/>
-        ) : null
-      } */}
 
-      <IonGrid class={openInvoiceDetail ? "overlap" : "hidden"} >
-
+      <IonGrid class={openInvoiceDetail ? "overlap" : "hidden"}>
         {invoice ? (
-          <DetailPanel invoice={invoice} hide={!openInvoiceDetail}/>
+          <DetailPanel invoice={invoice} hide={!openInvoiceDetail} />
         ) : null}
       </IonGrid>
     </div>

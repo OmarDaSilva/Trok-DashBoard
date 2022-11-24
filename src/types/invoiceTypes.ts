@@ -11,4 +11,4 @@ export interface Invoice {
   totalInclVat: number;
   invoiceFrom: string;
   dueDate: string;
-}
+} 

@@ -1,0 +1,13 @@
+.no-grid-padding {
+    padding-left: 0;
+}
+
+.title-text {
+    padding: 20px 20px;
+
+}
+
+.icons {
+    font-size: 30px;
+    cursor: pointer;
+}

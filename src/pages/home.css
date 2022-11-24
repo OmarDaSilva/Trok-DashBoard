@@ -8,12 +8,13 @@
 }
 
 .overlap {
-
+    padding-top: 0;
+    box-shadow: 3px 3px 3px 3px #919191;
     z-index: 9999;
     overflow-x: hidden;
-    transition: 1s;
-    
-    width: 250px;
+    transition: 0.4s;
+    padding-left: 0;
+    width: 300px;
     height: 100vh;
     position: absolute;
     right: 0;
