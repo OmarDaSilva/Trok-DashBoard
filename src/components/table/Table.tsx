@@ -8,7 +8,7 @@ const Table: React.FC<{ invoices: Invoice[] | null }> = (payload) => {
   return (
     <>
       <IonList lines="none" class="table">
-        <IonItem>
+        <IonItem class="no-hover">
           <IonGrid>
             <IonRow>
               <IonCol class="table-columns-labels">Supplier Details</IonCol>
@@ -24,11 +24,11 @@ const Table: React.FC<{ invoices: Invoice[] | null }> = (payload) => {
         <IonListHeader class="table-header">
           <IonGrid>
             <IonRow>
-              <IonCol><IonLabel>September</IonLabel></IonCol>
+              <IonCol><IonLabel class="header-text">September</IonLabel></IonCol>
               <IonCol></IonCol>
               <IonCol></IonCol>
-              <IonCol>2023</IonCol>
-            </IonRow>
+              <IonCol><IonLabel class="header-text">2023</IonLabel></IonCol>
+          </IonRow>
           </IonGrid>
         </IonListHeader>
 

@@ -2,3 +2,12 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
 }
+
+.item-table:hover {
+    background-color: #2F2F2F;
+    color: #FFF;
+}
+
+.item-table {
+    cursor: pointer;
+}
